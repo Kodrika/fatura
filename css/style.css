@@ -1,0 +1,678 @@
+@page { margin: 0 }
+body { margin: 0 }
+.sheet {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+
+/** Paper sizes **/
+body.Invoice               .sheet { width: 203mm; height: 273mm }
+body.Invoice.landscape     .sheet { width: 273mm; height: 203mm }
+
+/** Padding area **/
+.sheet.padding-10mm { padding: 10mm }
+.sheet.padding-15mm { padding: 15mm }
+.sheet.padding-20mm { padding: 20mm }
+.sheet.padding-25mm { padding: 25mm }
+
+/** For screen preview **/
+@media screen {
+  body { background: #e0e0e0 }
+  .sheet {
+    background-image: url("../img/invoice.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 5mm auto;
+  }
+}
+
+/** Fix for Chrome issue #273306 **/
+@media print {
+           body.Invoice.landscape { width: 273mm }
+  body.Invoice { width: 203mm }
+}
+
+input[type=text]{
+    border: 0;
+    overflow: hidden;
+    background: transparent;
+    height: 5mm;
+    position: absolute;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+}
+
+#name{
+    left: 28mm;
+    top: 57mm;
+    width: 85mm;
+}
+
+#address_1{
+    left: 18mm;
+    top: 63mm;
+    width: 97mm;
+}
+
+#address_2{
+    left: 18mm;
+    top: 69mm;
+    width: 97mm;
+}
+
+#address_3{
+    left: 18mm;
+    top: 75mm;
+    width: 97mm;
+}
+
+#taxOffice{
+    left: 24mm;
+    top: 88mm;
+    width: 40mm;
+}
+
+#taxNo{
+    left: 74mm;
+    top: 88mm;
+    width: 40mm;
+}
+
+#day{
+    left: 171mm;
+    top: 79mm;
+    width: 5mm;
+}
+
+#month{
+    left: 178mm;
+    top: 79mm;
+    width: 5mm;
+}
+
+#year{
+    left: 191mm;
+    top: 79mm;
+    width: 2mm;
+}
+
+#dispatch{
+    left: 166mm;
+    top: 87mm;
+    width: 30mm;
+}
+
+#total{
+    left: 166mm;
+    top: 256mm;
+    width: 30mm;
+}
+
+#product_1{
+    left: 19mm;
+    top: 110mm;
+    width: 90mm;
+}
+
+#qty_1{
+    left: 115mm;
+    top: 110mm;
+    width: 15mm;
+}
+
+#unit_1{
+    left: 131mm;
+    top: 110mm;
+    width: 10mm;
+}
+
+#unit_price_1{
+    left: 142mm;
+    top: 110mm;
+    width: 25mm;
+}
+
+#price_1{
+    left: 168mm;
+    top: 110mm;
+    width: 30mm;
+}
+
+#product_2{
+    left: 19mm;
+    top: 117mm;
+    width: 90mm;
+}
+
+#qty_2{
+    left: 115mm;
+    top: 117mm;
+    width: 15mm;
+}
+
+#unit_2{
+    left: 131mm;
+    top: 117mm;
+    width: 10mm;
+}
+
+#unit_price_2{
+    left: 142mm;
+    top: 117mm;
+    width: 25mm;
+}
+
+#price_2{
+    left: 168mm;
+    top: 117mm;
+    width: 30mm;
+}
+
+#product_3{
+    left: 19mm;
+    top: 124mm;
+    width: 90mm;
+}
+
+#qty_3{
+    left: 115mm;
+    top: 124mm;
+    width: 15mm;
+}
+
+#unit_3{
+    left: 131mm;
+    top: 124mm;
+    width: 10mm;
+}
+
+#unit_price_3{
+    left: 142mm;
+    top: 124mm;
+    width: 25mm;
+}
+
+#price_3{
+    left: 168mm;
+    top: 124mm;
+    width: 30mm;
+}
+
+#product_4{
+    left: 19mm;
+    top: 131mm;
+    width: 90mm;
+}
+
+#qty_4{
+    left: 115mm;
+    top: 131mm;
+    width: 15mm;
+}
+
+#unit_4{
+    left: 131mm;
+    top: 131mm;
+    width: 10mm;
+}
+
+#unit_price_4{
+    left: 142mm;
+    top: 131mm;
+    width: 25mm;
+}
+
+#price_4{
+    left: 168mm;
+    top: 131mm;
+    width: 30mm;
+}
+
+#product_5{
+    left: 19mm;
+    top: 138mm;
+    width: 90mm;
+}
+
+#qty_5{
+    left: 115mm;
+    top: 138mm;
+    width: 15mm;
+}
+
+#unit_5{
+    left: 131mm;
+    top: 138mm;
+    width: 10mm;
+}
+
+#unit_price_5{
+    left: 142mm;
+    top: 138mm;
+    width: 25mm;
+}
+
+#price_5{
+    left: 168mm;
+    top: 138mm;
+    width: 30mm;
+}
+
+#product_6{
+    left: 19mm;
+    top: 145mm;
+    width: 90mm;
+}
+
+#qty_6{
+    left: 115mm;
+    top: 145mm;
+    width: 15mm;
+}
+
+#unit_6{
+    left: 131mm;
+    top: 145mm;
+    width: 10mm;
+}
+
+#unit_price_6{
+    left: 142mm;
+    top: 145mm;
+    width: 25mm;
+}
+
+#price_6{
+    left: 168mm;
+    top: 145mm;
+    width: 30mm;
+}
+
+#product_7{
+    left: 19mm;
+    top: 152mm;
+    width: 90mm;
+}
+
+#qty_7{
+    left: 115mm;
+    top: 152mm;
+    width: 15mm;
+}
+
+#unit_7{
+    left: 131mm;
+    top: 152mm;
+    width: 10mm;
+}
+
+#unit_price_7{
+    left: 142mm;
+    top: 152mm;
+    width: 25mm;
+}
+
+#price_7{
+    left: 168mm;
+    top: 152mm;
+    width: 30mm;
+}
+
+#product_8{
+    left: 19mm;
+    top: 159mm;
+    width: 90mm;
+}
+
+#qty_8{
+    left: 115mm;
+    top: 159mm;
+    width: 15mm;
+}
+
+#unit_8{
+    left: 131mm;
+    top: 159mm;
+    width: 10mm;
+}
+
+#unit_price_8{
+    left: 142mm;
+    top: 159mm;
+    width: 25mm;
+}
+
+#price_8{
+    left: 168mm;
+    top: 159mm;
+    width: 30mm;
+}
+
+#product_9{
+    left: 19mm;
+    top: 166mm;
+    width: 90mm;
+}
+
+#qty_9{
+    left: 115mm;
+    top: 166mm;
+    width: 15mm;
+}
+
+#unit_9{
+    left: 131mm;
+    top: 166mm;
+    width: 10mm;
+}
+
+#unit_price_9{
+    left: 142mm;
+    top: 166mm;
+    width: 25mm;
+}
+
+#price_9{
+    left: 168mm;
+    top: 166mm;
+    width: 30mm;
+}
+
+#product_10{
+    left: 19mm;
+    top: 173mm;
+    width: 90mm;
+}
+
+#qty_10{
+    left: 115mm;
+    top: 173mm;
+    width: 15mm;
+}
+
+#unit_10{
+    left: 131mm;
+    top: 173mm;
+    width: 10mm;
+}
+
+#unit_price_10{
+    left: 142mm;
+    top: 173mm;
+    width: 25mm;
+}
+
+#price_10{
+    left: 168mm;
+    top: 173mm;
+    width: 30mm;
+}
+
+#product_11{
+    left: 19mm;
+    top: 180mm;
+    width: 90mm;
+}
+
+#qty_11{
+    left: 115mm;
+    top: 180mm;
+    width: 15mm;
+}
+
+#unit_11{
+    left: 131mm;
+    top: 180mm;
+    width: 10mm;
+}
+
+#unit_price_11{
+    left: 142mm;
+    top: 180mm;
+    width: 25mm;
+}
+
+#price_11{
+    left: 168mm;
+    top: 180mm;
+    width: 30mm;
+}
+
+#product_12{
+    left: 19mm;
+    top: 187mm;
+    width: 90mm;
+}
+
+#qty_12{
+    left: 115mm;
+    top: 187mm;
+    width: 15mm;
+}
+
+#unit_12{
+    left: 131mm;
+    top: 187mm;
+    width: 10mm;
+}
+
+#unit_price_12{
+    left: 142mm;
+    top: 187mm;
+    width: 25mm;
+}
+
+#price_12{
+    left: 168mm;
+    top: 187mm;
+    width: 30mm;
+}
+
+#product_13{
+    left: 19mm;
+    top: 194mm;
+    width: 90mm;
+}
+
+#qty_13{
+    left: 115mm;
+    top: 194mm;
+    width: 15mm;
+}
+
+#unit_13{
+    left: 131mm;
+    top: 194mm;
+    width: 10mm;
+}
+
+#unit_price_13{
+    left: 142mm;
+    top: 194mm;
+    width: 25mm;
+}
+
+#price_13{
+    left: 168mm;
+    top: 194mm;
+    width: 30mm;
+}
+
+#product_14{
+    left: 19mm;
+    top: 201mm;
+    width: 90mm;
+}
+
+#qty_14{
+    left: 115mm;
+    top: 201mm;
+    width: 15mm;
+}
+
+#unit_14{
+    left: 131mm;
+    top: 201mm;
+    width: 10mm;
+}
+
+#unit_price_14{
+    left: 142mm;
+    top: 201mm;
+    width: 25mm;
+}
+
+#price_14{
+    left: 168mm;
+    top: 201mm;
+    width: 30mm;
+}
+
+#product_15{
+    left: 19mm;
+    top: 208mm;
+    width: 90mm;
+}
+
+#qty_15{
+    left: 115mm;
+    top: 208mm;
+    width: 15mm;
+}
+
+#unit_15{
+    left: 131mm;
+    top: 208mm;
+    width: 10mm;
+}
+
+#unit_price_15{
+    left: 142mm;
+    top: 208mm;
+    width: 25mm;
+}
+
+#price_15{
+    left: 168mm;
+    top: 208mm;
+    width: 30mm;
+}
+
+#product_16{
+    left: 19mm;
+    top: 215mm;
+    width: 90mm;
+}
+
+#qty_16{
+    left: 115mm;
+    top: 215mm;
+    width: 15mm;
+}
+
+#unit_16{
+    left: 131mm;
+    top: 215mm;
+    width: 10mm;
+}
+
+#unit_price_16{
+    left: 142mm;
+    top: 215mm;
+    width: 25mm;
+}
+
+#price_16{
+    left: 168mm;
+    top: 215mm;
+    width: 30mm;
+}
+
+#product_17{
+    left: 19mm;
+    top: 222mm;
+    width: 90mm;
+}
+
+#qty_17{
+    left: 115mm;
+    top: 222mm;
+    width: 15mm;
+}
+
+#unit_17{
+    left: 131mm;
+    top: 222mm;
+    width: 10mm;
+}
+
+#unit_price_17{
+    left: 142mm;
+    top: 222mm;
+    width: 25mm;
+}
+
+#price_17{
+    left: 168mm;
+    top: 222mm;
+    width: 30mm;
+}
+
+#product_18{
+    left: 19mm;
+    top: 229mm;
+    width: 90mm;
+}
+
+#qty_18{
+    left: 115mm;
+    top: 229mm;
+    width: 15mm;
+}
+
+#unit_18{
+    left: 131mm;
+    top: 229mm;
+    width: 10mm;
+}
+
+#unit_price_18{
+    left: 142mm;
+    top: 229mm;
+    width: 25mm;
+}
+
+#price_18{
+    left: 168mm;
+    top: 229mm;
+    width: 30mm;
+}
+
+#subTotal{
+    left: 168mm;
+    top: 239mm;
+    width: 30mm;
+}
+
+#tax{
+    left: 168mm;
+    top: 246mm;
+    width: 30mm;
+}
+
+#totalText1{
+    left: 39mm;
+    top: 240mm;
+    width: 90mm;
+}
+
+#totalText2{
+    left: 39mm;
+    top: 247mm;
+    width: 90mm;
+}
